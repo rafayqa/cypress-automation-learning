@@ -1,0 +1,16 @@
+{
+  "name": "cypressautomation",
+  "version": "1.0.0",
+  "description": "Doing Web Automation using cypress",
+  "license": "ISC",
+  "author": "Rafay",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.9.0",
+    "cypress-iframe": "^1.0.1"
+  }
+}
