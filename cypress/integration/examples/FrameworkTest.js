@@ -15,7 +15,7 @@ describe('End to End Ecommerce Testing ', function () {
     it('Submit Order Successfully', function () {
 
         // visit the login page 
-        cy.visit(Cypress.env('url')+ "/loginpagePractise/");
+        this.homepage.goTo(Cypress.env('url')+ "/loginpagePractise/");
 
         //calling the login function from the HomePage class to perform login action
         const productPage = this.homepage.Login(this.data.username, this.data.password);

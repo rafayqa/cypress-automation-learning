@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T07:09:27.815Z",
+    "end": "2026-03-04T07:09:50.285Z",
+    "duration": 22470,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "72955bf1-0ad0-40f5-958a-8b6ec916508a",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\FrameworkTest.js",
+      "file": "cypress\\integration\\examples\\FrameworkTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7e7881f4-d038-4130-9c60-a08f304c8d81",
+          "title": "End to End Ecommerce Testing ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Submit Order Successfully",
+              "fullTitle": "End to End Ecommerce Testing  Submit Order Successfully",
+              "timedOut": null,
+              "duration": 19429,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// visit the login page \ncy.visit(Cypress.env('url') + \"/loginpagePractise/\");\n//calling the login function from the HomePage class to perform login action\nconst productPage = this.homepage.Login(this.data.username, this.data.password);\n``;\n// Page Validation to check if we are on the correct page or not\nproductPage.pageValidation();\n// verify number of products are there in the page \nproductPage.getProductCount().should('have.length', 4);\n// Add the required product to the cart\nproductPage.selectProduct(this.data.productName);\n//Add another product to the cart\nproductPage.selectFirstProduct();\n// Locate and click on the checkout button \nconst cartPage = productPage.gotoCart();\ncartPage.sumofProducts().then(function (sum) {\n  //Verify the total price of the products in the cart is less than $200,000\n  expect(sum).to.be.lessThan(200000);\n});\n//Locate and click on the checkout button to proceed further\nconst confirmpage = cartPage.checkoutItems();\nconfirmpage.submitFormdetails(this.data.country);\nconfirmpage.getAlertMessage().should('contain', this.data.successMessage);\n//Locate the country text box and type the country name and select the country from the dropdown\n// // Using custyom command to add the country with autocomplete and click on the purchase button\n// cy.AddCountrywithAutocomplete(this.data.country);\n//Verify the success message after placing the order\ncy.get('.alert-success').should('contain', this.data.successMessage);",
+              "err": {},
+              "uuid": "3b90f2a6-9c47-4864-b0d5-9c250df7449f",
+              "parentUUID": "7e7881f4-d038-4130-9c60-a08f304c8d81",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b90f2a6-9c47-4864-b0d5-9c250df7449f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19429,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T07:10:27.966Z",
+    "end": "2026-03-04T07:10:40.015Z",
+    "duration": 12049,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d3d7fbf7-f645-411d-a70a-c07286c6f9f3",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Test2.js",
+      "file": "cypress\\integration\\examples\\Test2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d900eef4-34b5-46b1-b41b-2824bf52784e",
+          "title": "Second Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My Second Test Case",
+              "fullTitle": "Second Test Suite My Second Test Case",
+              "timedOut": null,
+              "duration": 8462,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/')\ncy.visit(Cypress.env('url') + \"/seleniumPractise/#/\");\ncy.get('.search-keyword').type('ca');\ncy.wait(2000);\n//Parent child chaining\n//Aliasing \ncy.get('.products').as('productLocator');\n// Perform the actiuon based on the text \ncy.get('@productLocator').find('.product').each(($el, index, $list) => {\n  const requireText = $el.find('h4.product-name').text();\n  if (requireText.includes('Cashews')) {\n    //   cy.wrap($el).find('button').click();\n    //Two methods to do same thing but contains is more powerful if that product has more buttons than the add to cart button \n    cy.wrap($el).contains('ADD TO CART').click();\n  }\n});\n//Click on cart icon \ncy.get('.cart-icon > img').click();\n//Click on Proceed to Checkout \ncy.contains('PROCEED TO CHECKOUT').click();\n//Clicking on Place Order\ncy.contains('Place Order').click();",
+              "err": {},
+              "uuid": "a6185ec0-594d-4278-8e4c-332661bae016",
+              "parentUUID": "d900eef4-34b5-46b1-b41b-2824bf52784e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a6185ec0-594d-4278-8e4c-332661bae016"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8462,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

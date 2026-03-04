@@ -1,6 +1,8 @@
 import ProductPage from "./ProductPage";
 class HomePage {
-
+    goTo(url) {
+        cy.visit(url);
+    }
 
     Login(username, password) {
         // Enter the username and password
