@@ -14,6 +14,15 @@ When('I login to the application', function () {
     this.productPage.getProductCount().should('have.length', 4);
 });
 
+When('I login to the application portal', function (dataTable) {
+    this.productPage = homePage.Login(dataTable.rawTable[1][0], dataTable.rawTable[1][1]);
+    // Page Validation to check if we are on the correct page or not
+    this.productPage.pageValidation();
+    // verify number of products are there in the page 
+    this.productPage.getProductCount().should('have.length', 4);
+
+})
+
 When('I add items to cart and Checkout', function () {
     this.productPage.selectProduct(this.data.productName);
     //Add another product to the cart
