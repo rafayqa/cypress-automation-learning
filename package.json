@@ -14,10 +14,17 @@
     "recordDashboard": "npx cypress run --record --key 0e658650-8edf-41ef-a417-7edd6a65bf2a",
     "frameworkTests": "npx cypress run --spec \"cypress/integration/examples/FrameworkTest.js\""
   },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
+  },
   "devDependencies": {
     "cypress": "^15.9.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^4.0.2"
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "multiple-cucumber-html-reporter": "^3.10.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",

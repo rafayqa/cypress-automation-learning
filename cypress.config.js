@@ -38,3 +38,4 @@ async function setupNodeEvents(on, config) {
     },
   });
 
+  // Json file --> cucumber html plugin --> html report
