@@ -34,7 +34,8 @@ async function setupNodeEvents(on, config) {
     e2e: {
       chromeWebSecurity: false,
       setupNodeEvents,
-      specPattern: 'cypress/integration/examples/BDD/*.feature'
+      // specPattern: 'cypress/integration/examples/BDD/*.feature'
+      specPattern: 'cypress/integration/examples/*.js'
     },
   });
 
