@@ -27,3 +27,14 @@
 // Cypress.Commands.add('AddCountrywithAutocomplete', (country) => {
 
 // })
+
+Cypress.Commands.add('LoginAPI', () => {
+
+    cy.request("POST", "https://rahulshettyacademy.com/api/ecom/auth/login", 
+    { userEmail: "qa@tester1.com", userPassword: "Qa@tester4.com" }).
+    then(function(response){
+        expect(response.status).to.eq(200)
+        Cypress.env('token', response.body.token)  
+    })
+
+})

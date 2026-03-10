@@ -24,10 +24,12 @@
     "cypress": "^15.9.0",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^4.0.2",
-    "multiple-cucumber-html-reporter": "^3.10.0"
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "neat-csv": "5.1.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",
     "@bahmutov/cypress-esbuild-preprocessor": "latest"
+    
   }
 }
