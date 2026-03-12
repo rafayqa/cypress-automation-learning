@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "latest",
-    "@bahmutov/cypress-esbuild-preprocessor": "latest"
+    "@bahmutov/cypress-esbuild-preprocessor": "latest",
+    "exceljs": "^4.4.0"
+
     
   }
 }
