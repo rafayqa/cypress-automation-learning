@@ -16,6 +16,7 @@ async function setupNodeEvents(on, config) {
     "file:preprocessor",
     createBundler({
       plugins: [createEsbuildPlugin(config)],
+      sourcemap: "inline"
     })
   );
 
@@ -77,6 +78,7 @@ module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
 
   e2e: {
+    experimentalStudio: true,
     chromeWebSecurity: false,
     setupNodeEvents,
     specPattern: "cypress/integration/examples/*.js",
